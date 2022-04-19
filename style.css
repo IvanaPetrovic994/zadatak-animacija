@@ -1,0 +1,95 @@
+body{
+    background-color:#050210;
+}
+.roditelj{
+    width: 400px;
+    height: 400px;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    top: calc(50vh - 200px);
+}
+.krug-1{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin: 0 auto;
+    background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+    border-radius: 50%;
+    top: calc(50% - 150px);
+    z-index: 2;
+    animation-name: rotiranje;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.krug-1::before{
+    content: '';
+    width: 250px;
+    height: 250px;   background-color:#050210;
+    z-index: 3;
+    position: absolute;
+    border-radius: 50%;
+    left: 25px;
+    top: 25px;
+}
+.krug-1::after{
+    content: '';
+    width: 250px;
+    height: 250px;   background-color:#120938;
+    z-index: 4;
+    position: absolute;
+    border-radius: 50%;
+    left: 25px;
+    top: 25px;
+    animation-name: pulsiranje;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.krug-2{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin: 0 auto;
+    background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+    border-radius: 50%;
+    top: -250px;
+    z-index: 1;
+    filter: blur(40px);
+    animation-name: rotiranje;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.kvadrat{
+    width: 300px;
+    height: 300px;
+    background-color: red;
+    display: block;
+    z-index: 2;
+    position: absolute;
+}
+
+@keyframes rotiranje{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+    transform: rotate(360deg);
+    }
+}
+@keyframes pulsiranje {
+0%{
+    transform:scale(0);
+    opacity:1;
+}
+90%{
+    opacity: 0.5;
+}
+100%{
+    transform: scale(1);
+    opacity: 0;
+}
+
+}
